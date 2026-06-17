@@ -1,0 +1,25 @@
+"""Module providing a binary search function on an array."""
+
+def find(search_list, value):
+
+    """Function that searches a given array for a given value using binary search"""
+    
+    low = 0
+    high = len(search_list) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+        guess = search_list[mid]
+
+        if guess == value:
+            return mid
+        if guess > value:
+            high = mid - 1
+        if guess < value:
+            low = mid + 1
+            
+    raise ValueError ("value not in array")
+    
+        
+            
+            
